@@ -14,33 +14,69 @@
   <h2>Speed check by Maheshwar Punyam Anand</h2>
 
   <div id="target"> Your time </div>
-  <div id="counter"> Count </div>
   <button type="button"
   class="btn btn-primary"
   onclick="startTime()">
   Start Timer</button>
+  <div id="counter"> Count </div>
   <button type="button"
   class="btn btn-primary"
   onclick="recordTime()">
   React</button>
   
-  <p id="target">I will become red </p>
+  <p id="countdown">I will become red </p>
   
   <script> 
   let reactTime
-
+    
+    
   function recordTime(){
     reactTime=undefined;
     //Set(reactTime)= new Date.now();
     reactTime= Date.now();
     console.log(reactTime);
   }
+  let i=0;
   function startTime(){
-    for(let i=0;i<9;i++){
-        setTimeout()
-    }
-  }
+    for( i=0;i<9;i++){
+        setTimeou(i);
 
+        //console.log("bb is"+bb);
+        
+        //setTimeout(i,8000);  
+    }
+    
+   function setTimeou(i)
+   {
+        setTimeout(()=>{
+                document.getElementById('countdown').innerHTML=i;
+            },(8-i)*1000);
+    }
+
+    ( () => {
+        console.log("Entered anononymouse fn");
+         if(reactTime==undefined){
+            console.log("entered if");
+            document.getElementById('target').innerHTML="Too Slow";
+         }
+         else{
+            console.log("entered else");
+            let endTime;
+            endTime=Date.now();
+            console.log("endtime is"+endTime);
+            let temp=endTime-reactTime;
+            console.log(temp);
+            document.getElementById('target').innerHTML="Time was "+temp;
+         }
+        })();
+  }
+  /*
+   function setTimeout(interval,cnt){
+      document.getElementById('counter').innerHTML=cnt;
+      //8-i*1000;
+      console.log(interval);
+    }
+  */
   function buttonPress1() {
     setTimeout(function(){
       document.getElementById('target').style.color = "red"
