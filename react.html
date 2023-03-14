@@ -37,11 +37,14 @@
     console.log(reactTime);
   }
   let i=0;
+  //let rv=Math.floor((Math.random() * 10) + 2);
   function startTime(){
-    for( i=0;i<9;i++){
+    let rv=Math.floor((Math.random() * 10) + 2);
+    for( i=0;i<rv;i++){
+        console.log(rv);
         setTimeou(i);
 
-        //console.log("bb is"+bb);
+        //uconsole.log("bb is"+bb);
         
         //setTimeout(i,8000);  
     }
@@ -50,7 +53,7 @@
    {
         setTimeout(()=>{
                 document.getElementById('countdown').innerHTML=i;
-            },(8-i)*1000);
+            },(rv-i)*1000);
     }
 
     ( () => {
