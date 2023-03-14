@@ -147,7 +147,24 @@
         let col1=0;
         let col=0;
         let col2=0;
-        
+
+        function help()
+        {
+            console.log("hi")
+            let lastcol=lastCheck%6;
+            let lastrow=Math.floor(lastCheck/6);
+            let catcol=catLocation%6;
+            let catrow=Math.floor(catLocation/6);
+            let coldiff=Math.abs(lastcol-catcol)
+            let rowdiff=(Math.abs(lastrow-catrow))
+            console.log(rowdiff,coldiff)
+
+            if(rowdiff<=1 && coldiff<=1)
+            {
+                document.getElementById("help").innerHTML="Meow"
+            }
+        }
+        /*
         function help(){
             console.log(lastCheck);
             col=13%6;
@@ -374,9 +391,10 @@
                 console.log("else");
                 help.innerHTML="sorry, no help available"; 
             }*/
-            penalty.innerHTML="Penalty is "+penal;
+          //  penalty.innerHTML="Penalty is "+penal;
             //document.getElementById("help").innerHTML="sorry";
-        }
+     //   }
+
     </script>
 </body>
 </html>
