@@ -39,10 +39,8 @@
 		</p>
 		<button onclick="makeNewDiv()">Add value</button>
         <button onclick="get()">Get</button>
-        <button onclick="delay()">Delay</button>
+        <button onclick="delay()">Delay</button>	
         <button onclick="Promote()">Promote</button>
-	
-	
 </body>
 <script>
      let queueItems=[];
@@ -52,7 +50,7 @@
 		let element = document.createElement("div");
 		element.innerHTML = document.getElementById('inp1').value;
 		element.style.color = "orange";
-        element.classList.add("delayQ");
+        element.className="delayQ";
 
 		/* add it to the container */
 		let container = document.getElementById('target');
@@ -60,30 +58,7 @@
         // queueItems=document.getElementsByClassName('delayQ');
         // console.log(queueItems);
 	}
-    // function makeNewDi(){
-	// 	/* make the div and its text */
-	// 	let element = document.createElement("div")
-	// 	element.innerHTML = removedItem.innerHTML;
-	// 	element.style.color = "orange"
-
-	// 	/* add it to the container */
-	// 	let container = document.getElementById('target')
-	// 	container.insertBefore(element,null)
-		
-	// }
-    // function makeNewD(){
-	// 	/* make the div and its text */
-	// 	let element = document.createElement("div")
-	// 	element.innerHTML = removedItem.innerHTML;
-	// 	element.style.color = "orange"
-
-	// 	/* add it to the container */
-	// 	let container = document.getElementById('target')
-	// 	container.insertBefore(element,container.firstChild)
-		
-	// }
-   
-    //for(let i=0;i<3;i++){
+    
             queueItems=document.getElementsByClassName('delayQ');
             console.log(document.getElementsByClassName('delayQ'));
         //}
@@ -116,7 +91,6 @@
         }
         
     }
-
     function Promote(){
         let len=queueItems.length;
         
